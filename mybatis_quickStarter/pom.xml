@@ -31,8 +31,13 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>8.0.21</version>
+            <!--
+                        <version>5.1.6</version>
+            -->
+<!--
             <scope>runtime</scope>
+-->
         </dependency>
         <!--单元测试坐标-->
         <dependency>
