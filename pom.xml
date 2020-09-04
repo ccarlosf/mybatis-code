@@ -10,6 +10,7 @@
         <module>mybatis_quickStarter</module>
         <module>IPersistence_test</module>
         <module>IPersistence</module>
+        <module>mybatis_multitable</module>
     </modules>
     <name>mybatis-code</name>
     <description>Demo project for Spring Boot</description>
