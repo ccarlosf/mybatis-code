@@ -1,7 +1,9 @@
 package com.ccarlos.test;
 
 import com.ccarlos.mapper.IOrderMapper;
+import com.ccarlos.mapper.IUserMapper;
 import com.ccarlos.pojo.Order;
+import com.ccarlos.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -23,6 +25,18 @@ public class MybatisTest {
         List<Order> orderAndUser = mapper.findAll();
         for (Order order : orderAndUser) {
             System.out.println(order);
+        }
+    }
+
+    @Test
+    public void test2() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        IUserMapper mapper = sqlSession.getMapper(IUserMapper.class);
+        List<User> all = mapper.findAll();
+        for (User user : all) {
+            System.out.println(user);
         }
 
     }

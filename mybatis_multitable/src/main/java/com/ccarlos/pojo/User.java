@@ -1,6 +1,8 @@
 package com.ccarlos.pojo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User implements Serializable {
 
@@ -8,16 +10,17 @@ public class User implements Serializable {
 
     private String username;
 
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", orderList=" + orderList +
                 '}';
     }
+
     //    //表示用户关联的订单
-//    private List<Order> orderList = new ArrayList<>();
+    private List<Order> orderList = new ArrayList<>();
 //
 //    //表示用户关联的角色
 //    private List<Role> roleList = new ArrayList<>();
