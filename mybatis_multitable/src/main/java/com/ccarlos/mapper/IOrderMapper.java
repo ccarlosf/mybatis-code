@@ -18,7 +18,7 @@ public interface IOrderMapper {
             @Result(property = "orderTime",column = "orderTime"),
             @Result(property = "total",column = "total"),
             @Result(property = "user",column = "uid",javaType = User.class,
-                    one=@One(select = "com.lagou.mapper.IUserMapper.findUserById"))
+                    one=@One(select = "com.ccarlos.mapper.IUserMapper.findUserById"))
     })
     @Select("select * from orders")
     public List<Order> findOrderAndUser();
