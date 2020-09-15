@@ -21,6 +21,20 @@
         select *,o.id oid from user u left join orders o on u.id=o.uid;
     </select>
 
+    <resultMap id="userRoleMap" type="com.ccarlos.pojo.User">
+        <result property="id" column="userid"></result>
+        <result property="username" column="username"></result>
+        <collection property="roleList" ofType="com.ccarlos.pojo.Role">
+            <result property="id" column="roleid"></result>
+            <result property="roleName" column="roleName"></result>
+            <result property="roleDesc" column="roleDesc"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findAllUserAndRole" resultMap="userRoleMap">
+        select * from user u left join sys_user_role ur on u.id = ur.userid
+										 left join sys_role r on r.id = ur.roleid
+    </select>
 
 
 </mapper>

@@ -8,4 +8,5 @@ public interface IUserMapper {
 
     public List<User> findAll();
 
+    public List<User> findAllUserAndRole();
 }

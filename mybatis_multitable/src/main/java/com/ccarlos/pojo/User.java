@@ -1,5 +1,6 @@
 package com.ccarlos.pojo;
 
+import javax.management.relation.Role;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class User implements Serializable {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", orderList=" + orderList +
+                ", roleList=" + roleList +
                 '}';
     }
 
@@ -23,7 +24,7 @@ public class User implements Serializable {
     private List<Order> orderList = new ArrayList<>();
 //
 //    //表示用户关联的角色
-//    private List<Role> roleList = new ArrayList<>();
+    private List<Role> roleList = new ArrayList<>();
 //
 //    public List<Order> getOrderList() {
 //        return orderList;

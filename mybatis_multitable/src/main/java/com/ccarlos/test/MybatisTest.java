@@ -38,8 +38,20 @@ public class MybatisTest {
         for (User user : all) {
             System.out.println(user);
         }
-
     }
+
+    @Test
+    public void test3() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        IUserMapper mapper = sqlSession.getMapper(IUserMapper.class);
+        List<User> allUserAndRole = mapper.findAllUserAndRole();
+        for (User user : allUserAndRole) {
+            System.out.println(user);
+        }
+    }
+
 
 }
 
