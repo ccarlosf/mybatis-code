@@ -11,8 +11,10 @@ import java.util.List;
 
 public interface IOrderMapper {
 
-    //查询订单的同时还查询该订单所属的用户
+    List<Order> findAll();
 
+
+    //查询订单的同时还查询该订单所属的用户
     @Results({
             @Result(property = "id",column = "id"),
             @Result(property = "orderTime",column = "orderTime"),
@@ -26,9 +28,5 @@ public interface IOrderMapper {
 
     @Select("select * from orders where uid = #{uid}")
     public List<Order> findOrderByUid(Integer uid);
-
-
-    List<Order> findAll();
-
 
 }
