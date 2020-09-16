@@ -58,12 +58,11 @@
 
     <!--引入映射配置文件-->
     <mappers>
-        <mapper class="com.ccarlos.mapper.IUserMapper"></mapper>
+<!--        <mapper class="com.ccarlos.mapper.IUserMapper"></mapper>
         <mapper class="com.ccarlos.mapper.IOrderMapper"></mapper>
+        <mapper class="com.ccarlos.mapper.IRoleMapper"></mapper>-->
 
-        <!--
                 <package name="com.ccarlos.mapper"/>
-        -->
     </mappers>
 
 

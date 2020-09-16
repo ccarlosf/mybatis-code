@@ -115,6 +115,14 @@ public class MybatisTest {
         for (User user : all) {
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void ManyToMany(){
+        List<User> all = userMapper.findAllUserAndRole();
+        for (User user : all) {
+            System.out.println(user);
+        }
 
     }
 
