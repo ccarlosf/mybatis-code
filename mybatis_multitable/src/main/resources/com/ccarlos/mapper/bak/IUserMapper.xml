@@ -6,6 +6,7 @@
 <mapper namespace="com.ccarlos.mapper.IUserMapper">
 
     <cache></cache>
+    <cache type="org.mybatis.caches.redis.RedisCache" />
 
     <resultMap id="userMap" type="com.ccarlos.pojo.User">
         <result property="id" column="uid"></result>

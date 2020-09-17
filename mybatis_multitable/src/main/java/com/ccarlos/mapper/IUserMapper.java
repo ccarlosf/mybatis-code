@@ -2,10 +2,11 @@ package com.ccarlos.mapper;
 
 import com.ccarlos.pojo.User;
 import org.apache.ibatis.annotations.*;
+import org.mybatis.caches.redis.RedisCache;
 
 import java.util.List;
 
-@CacheNamespace
+@CacheNamespace(implementation = RedisCache.class)//开启二级缓存
 public interface IUserMapper {
 
     //根据id查询用户
