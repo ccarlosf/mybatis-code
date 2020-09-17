@@ -4,6 +4,8 @@ import com.ccarlos.mapper.IOrderMapper;
 import com.ccarlos.mapper.IUserMapper;
 import com.ccarlos.pojo.Order;
 import com.ccarlos.pojo.User;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.google.common.base.Splitter;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -134,6 +136,24 @@ public class MybatisTest {
         List<String> list = Splitter.on(",").splitToList(str);
         list = list.stream().distinct().collect(Collectors.toList());
         System.out.println(list.size());
+    }
+
+    @Test
+    public void pageHelperTest(){
+
+        PageHelper.startPage(1,1);
+        List<User> users = userMapper.selectUser();
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+        PageInfo<User> pageInfo = new PageInfo<>(users);
+        System.out.println("总条数："+pageInfo.getTotal());
+        System.out.println("总页数："+pageInfo.getPages());
+        System.out.println("当前页："+pageInfo.getPageNum());
+        System.out.println("每页显示的条数："+pageInfo.getPageSize());
+
+
     }
 
 
