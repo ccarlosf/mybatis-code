@@ -25,9 +25,9 @@
     </typeAliases>
 
     <plugins>
- <!--       <plugin interceptor="com.ccarlos.plugin.MyPlugin">
+        <plugin interceptor="com.ccarlos.plugin.MyPlugin">
             <property name="name" value="tom"/>
-        </plugin>-->
+        </plugin>
 
         <plugin interceptor="com.github.pagehelper.PageHelper">
             <property name="dialect" value="mysql"/>
