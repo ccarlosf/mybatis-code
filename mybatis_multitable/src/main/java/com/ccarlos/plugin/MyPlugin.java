@@ -18,7 +18,7 @@ public class MyPlugin implements Interceptor {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /*
-        拦截方法：只要被拦截的目标对象的目标方法被执行时，每次都会执行intercept方法
+        拦截方法：只要被拦截的目标对象的目标方法被执行时，每次都会执行intercept方法 测试
      */
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
