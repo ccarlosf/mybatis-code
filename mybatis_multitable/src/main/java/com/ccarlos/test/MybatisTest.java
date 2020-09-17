@@ -71,8 +71,8 @@ public class MybatisTest {
         orderMapper = sqlSession.getMapper(IOrderMapper.class);
     }
 
-   /* @Test
-    public void addUser(){
+    @Test
+    public void addUser() {
         User user = new User();
         user.setId(3);
         user.setUsername("测试数据");
@@ -81,7 +81,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void updateUser(){
+    public void updateUser() {
         User user = new User();
         user.setId(3);
         user.setUsername("修改了测试数据");
@@ -91,7 +91,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void selectUser(){
+    public void selectUser() {
         List<User> users = userMapper.selectUser();
         for (User user : users) {
             System.out.println(user);
@@ -99,12 +99,12 @@ public class MybatisTest {
     }
 
     @Test
-    public void deleteUser(){
+    public void deleteUser() {
         userMapper.deleteUser(3);
-    }*/
+    }
 
     @Test
-    public void oneToOne(){
+    public void oneToOne() {
         List<Order> orderAndUser = orderMapper.findOrderAndUser();
         for (Order order : orderAndUser) {
             System.out.println(order);
@@ -112,7 +112,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void oneToMany(){
+    public void oneToMany() {
         List<User> all = userMapper.findAll();
         for (User user : all) {
             System.out.println(user);
@@ -120,7 +120,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void ManyToMany(){
+    public void ManyToMany() {
         List<User> all = userMapper.findAllUserAndRole();
         for (User user : all) {
             System.out.println(user);
@@ -129,7 +129,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void distinct(){
+    public void distinct() {
         String str = "DSJZ315001,DSJZ315002,DSJZ315003,DSJZ315022,DSJZ315023,DSJZ315006,DSJZ315011,DSJZ910007,DSJZ910008,DSJZ910009,DSJZ910010,KF05000410,KF05000410,KF05000410,KF05000420,KF05000420,KF05000420,KF05000430,KF05000430,KF05000430,KF05000230,KF05000230,KF05000230,KF01700230,KF01700230,KF01700230,KF01700230,KF01700240,KF01700240,KF01700240,KF01700240,KF01700250,KF01700250,KF01700250,KF01700250,DSJZ910014,DSJZ910014,DSJZ910014,DSJZ910014,DSJZ910014,DSJZ910014,DSJZ910001,DSJZ910002,DSJZ910003,DSJZ910004,DSJZ910005,DSJZ910006";
         List<String> list = Splitter.on(",").splitToList(str);
         list = list.stream().distinct().collect(Collectors.toList());
