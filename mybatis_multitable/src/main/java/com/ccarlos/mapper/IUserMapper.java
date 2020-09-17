@@ -21,7 +21,7 @@ public interface IUserMapper {
     })
     public List<User> findAll();
 
-    //查询所有用户、同时查询每个用户关联的角色信息
+    //查询所有用户、同时查询每个用户关联的角色信
     @Select("select * from user")
     @Results({
             @Result(property = "id",column = "id"),
