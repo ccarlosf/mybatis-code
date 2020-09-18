@@ -11,6 +11,7 @@
         <module>IPersistence_test</module>
         <module>IPersistence</module>
         <module>mybatis_multitable</module>
+        <module>design_pattern</module>
     </modules>
     <name>mybatis-code</name>
     <description>Demo project for Spring Boot</description>
